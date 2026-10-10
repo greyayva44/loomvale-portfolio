@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loomvale for Agencies</title>
+<meta name="description" content="Loomvale is a two-person UI/UX studio in Vienna and Bratislava. We work white-label for agencies, under NDA, inside your process and your Figma files.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Layout: one left-aligned column, 1200px max; work cases as text 5/12 + images 7/12. */
+  :root {
+    --ground: #F5F8F6;
+    --ground-deep: #E9EFEB;
+    --ink: #131815;
+    --ink-soft: #48514C;
+    --ink-muted: #66706B;
+    --rule: #C9D3CE;
+    --green: #1F6B52;
+    --night: #131815;
+    --night-text: #EEF3F0;
+    --night-soft: #B9C5BF;
+    --night-green: #7FC9AE;
+    --display: 'Chakra Petch', 'Arial Narrow', Arial, sans-serif;
+    --body: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 400 18px/1.6 var(--body);
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding-inline: 24px; }
+
+  header.top { padding-block: 28px; }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .mark { font: 700 28px/1 var(--display); letter-spacing: -0.5px; text-decoration: none; }
+  .top a.mail { font-size: 16px; color: var(--ink-soft); }
+
+  h1, h2, h3 { margin: 0; text-wrap: balance; }
+  h2 { font: italic 500 clamp(32px, 4.4vw, 52px)/1.1 var(--display); }
+  h3 { font: 600 20px/1.35 var(--body); }
+  p { margin: 0; }
+
+  .hero { background: var(--night); color: var(--night-text); padding-block: clamp(72px, 12vw, 140px) clamp(56px, 8vw, 96px); }
+  .hero h1 { font: italic 500 clamp(44px, 8.4vw, 104px)/1.02 var(--display); max-width: 12ch; }
+  .hero .lede { margin-top: 32px; font-size: clamp(19px, 2vw, 23px); line-height: 1.5; color: var(--night-soft); max-width: 40ch; }
+  .hero .facts { margin-top: 56px; display: flex; flex-wrap: wrap; gap: 12px 40px; font-size: 16px; color: var(--night-soft); }
+  .hero .facts strong { color: var(--night-green); font-weight: 500; }
+
+  section.block { padding-block: clamp(64px, 9vw, 112px); }
+  section.block + section.block { border-top: 1px solid var(--rule); }
+  .block > .wrap > h2 { margin-bottom: 48px; max-width: 18ch; }
+
+  .terms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; margin: 0; }
+  .terms div { border-top: 2px solid var(--ink); padding-top: 18px; }
+  .terms dt { font: 600 19px/1.35 var(--body); }
+  .terms dd { margin: 8px 0 0; color: var(--ink-soft); max-width: 34ch; }
+
+  .scope { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: start; }
+  .scope ul { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--rule); }
+  .scope li { border-top: 1px solid var(--rule); padding-block: 16px; font-size: 21px; line-height: 1.4; }
+  .a11y { background: var(--night); color: var(--night-soft); border-radius: 20px; padding: 36px; }
+  .a11y h3 { font: italic 500 30px/1.15 var(--display); color: var(--night-text); }
+  .a11y p { margin-top: 16px; }
+
+  .work { display: grid; gap: clamp(72px, 9vw, 112px); }
+  .case { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: start; }
+  .case .text { display: flex; flex-direction: column; gap: 18px; position: sticky; top: 24px; }
+  .case .kind { font-size: 15px; color: var(--green); font-weight: 500; }
+  .case h3.title { font: italic 500 clamp(30px, 3.4vw, 40px)/1.1 var(--display); }
+  .case .text > p { color: var(--ink-soft); max-width: 44ch; }
+  .case ul { list-style: none; margin: 4px 0 0; padding: 0; border-bottom: 1px solid var(--rule); }
+  .case li { border-top: 1px solid var(--rule); padding-block: 9px; }
+  .case .credit { font-size: 15px; color: var(--ink-muted); }
+  .shots { display: grid; gap: 14px; }
+  .shots img { width: 100%; border-radius: 16px; background: var(--ground-deep); }
+  .shots .row { display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shots .row.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .team { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .person { background: #FCFDFC; border: 1px solid #D6DFDA; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 10px; }
+  .person .role { font-size: 15px; color: var(--green); font-weight: 500; }
+  .person h3 { font: 600 28px/1.2 var(--body); }
+  .person p { color: var(--ink-soft); }
+  .team-note { margin-top: 28px; color: var(--ink-soft); max-width: 60ch; }
+
+  .start { background: var(--night); color: var(--night-text); padding-block: clamp(72px, 10vw, 128px); }
+  .start h2 { font-size: clamp(40px, 6.6vw, 84px); max-width: 14ch; }
+  .start .lede { margin-top: 24px; font-size: clamp(19px, 2vw, 22px); color: var(--night-soft); max-width: 44ch; }
+  .start dl { margin: 56px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+  .start dl div { border-top: 1px solid #3A443F; padding-top: 18px; }
+  .start dt { font-size: 15px; color: var(--night-green); font-weight: 500; }
+  .start dd { margin: 8px 0 0; font-size: 20px; line-height: 1.45; }
+  .start a { color: var(--night-text); text-underline-offset: 4px; }
+  .start a:focus-visible { outline-color: var(--night-green); }
+
+  footer { background: var(--night); color: #8F9A94; font-size: 14px; padding-block: 0 48px; }
+  footer p { border-top: 1px solid #3A443F; padding-top: 24px; max-width: 80ch; }
+
+  @media (max-width: 860px) {
+    .terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .scope, .case, .team, .start dl { grid-template-columns: minmax(0, 1fr); }
+    .case .text { position: static; }
+  }
+  @media (max-width: 560px) {
+    .terms { grid-template-columns: minmax(0, 1fr); }
+    .shots .row.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .scope li { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top" style="background:var(--night);color:var(--night-text)">
+  <div class="wrap">
+    <a class="mark" href="#">loomvale.</a>
+    <a class="mail" style="color:var(--night-soft)" href="mailto:loomvale@proton.me">loomvale@proton.me</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <h1>Design capacity for agencies.</h1>
+    <p class="lede">UI/UX, product design and design-system work. Under your brand, under NDA, inside your process and your Figma files.</p>
+    <div class="facts">
+      <span>Vienna and Bratislava</span>
+      <span>Working language English</span>
+      <span><strong>Available now</strong></span>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Part of your team, under your name.</h2>
+    <dl class="terms">
+      <div><dt>White-label</dt><dd>Your brand and your client relationship. We never contact the end client.</dd></div>
+      <div><dt>NDA before files</dt><dd>We sign your NDA, and your client's, before we see anything.</dd></div>
+      <div><dt>Your Figma, your system</dt><dd>Your components, tokens and naming. We extend the library and never fork it.</dd></div>
+      <div><dt>Your process</dt><dd>Your dailies, reviews and tickets, in the tools your team already uses.</dd></div>
+      <div><dt>Named people only</dt><dd>Only the people named on this page open your files, unless you approve more.</dd></div>
+      <div><dt>Same time zone</dt><dd>Based in Vienna and Bratislava. On site in Vienna when you need us.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>What you can hand us.</h2>
+    <div class="scope">
+      <ul>
+        <li>Screens and flows inside an existing design system</li>
+        <li>Dashboards and data views for internal tools</li>
+        <li>Screen variants across sizes, states and edge cases</li>
+        <li>New components, variants and documentation</li>
+        <li>Handoff specs your engineers can build from</li>
+        <li>Extra hands when a deadline moves</li>
+      </ul>
+      <aside class="a11y">
+        <h3>WCAG 2.1 AA from the first screen.</h3>
+        <p>Contrast, focus states, touch targets and readable type. Since June 2025 the European Accessibility Act covers consumer banking services, so we design for it from the start.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Selected work.</h2>
+    <div class="work">
+
+      <article class="case">
+        <div class="text">
+          <p class="kind">AI, design system, web and mobile</p>
+          <h3 class="title">Axiom</h3>
+          <p>A learning app for children and parents. A child sends homework to an AI companion and gets step-by-step help. The parent follows progress.</p>
+          <ul>
+            <li>One component foundation</li>
+            <li>Web and mobile from one system</li>
+            <li>Two roles: child and parent</li>
+            <li>Task states and progress data</li>
+          </ul>
+          <p class="credit">Delivered with our partner studio TheRoom. Shown with permission.</p>
+        </div>
+        <div class="shots">
+          <img src="img/axiom-1.jpg" width="1300" height="757" alt="Axiom mobile screens: AI homework companion and progress score">
+          <div class="row">
+            <img src="img/axiom-2.jpg" width="740" height="431" loading="lazy" alt="Axiom web dashboard with homework cards and success score">
+            <img src="img/axiom-3.jpg" width="740" height="431" loading="lazy" alt="Axiom mobile screens: homework list, statistics and progress">
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="text">
+          <p class="kind">Fintech, payments, mobile</p>
+          <h3 class="title">Wallet App</h3>
+          <p>Peer-to-peer payments for an Egyptian startup, built around splitting a bill: create an event, invite friends, settle up.</p>
+          <ul>
+            <li>Balance, top-up and withdrawal</li>
+            <li>Transaction history and statistics</li>
+            <li>Payment requests and QR flow</li>
+            <li>Activity feed</li>
+          </ul>
+          <p class="credit">Concept for an investor round. Delivered with our partner studio TheRoom. Shown with permission.</p>
+        </div>
+        <div class="shots">
+          <img src="img/wallet-1.jpg" width="1300" height="757" loading="lazy" alt="Wallet app balance and statistics screens">
+          <div class="row three">
+            <img src="img/wallet-2.jpg" width="700" height="408" loading="lazy" alt="Wallet app event creation and activity feed screens">
+            <img src="img/wallet-3.jpg" width="700" height="408" loading="lazy" alt="Wallet app QR payment and friend request screens">
+            <img src="img/wallet-4.jpg" width="700" height="408" loading="lazy" alt="Wallet app home and activity feed screens">
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="text">
+          <p class="kind">Product UI and brand, mobile</p>
+          <h3 class="title">Vatra</h3>
+          <p>A nostalgia app. We designed the interface and the brand together, so the app, the icon and the merchandise read as one product.</p>
+          <ul>
+            <li>App UI and interaction</li>
+            <li>App icon and identity</li>
+            <li>Merchandise and promo</li>
+          </ul>
+          <p class="credit">Loomvale, end to end.</p>
+        </div>
+        <div class="shots">
+          <img src="img/vatra-1.jpg" width="1300" height="624" loading="lazy" alt="Vatra app home screen with a collage of memory objects">
+          <div class="row">
+            <img src="img/vatra-2.jpg" width="740" height="360" loading="lazy" alt="Vatra app icon on a phone home screen">
+            <img src="img/vatra-3.jpg" width="740" height="361" loading="lazy" alt="Vatra tote bag with the app's illustration and wordmark">
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="text">
+          <p class="kind">Identity, money logistics</p>
+          <h3 class="title">Global Collection</h3>
+          <p>Visual identity for a cash-in-transit company. The business sells trust in whoever holds the money, and the identity had to carry that.</p>
+          <ul>
+            <li>Logo and type system</li>
+            <li>Vehicle livery</li>
+            <li>Signage and business cards</li>
+          </ul>
+          <p class="credit">Loomvale, end to end.</p>
+        </div>
+        <div class="shots">
+          <img src="img/gc-1.jpg" width="1300" height="633" loading="lazy" alt="Global Collection van with green livery">
+          <div class="row">
+            <img src="img/gc-2.jpg" width="740" height="361" loading="lazy" alt="Global Collection logo mark on a building facade">
+            <img src="img/gc-3.jpg" width="740" height="360" loading="lazy" alt="Global Collection business card">
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Who works on your project.</h2>
+    <div class="team">
+      <div class="person">
+        <p class="role">Co-founder, lead designer</p>
+        <h3>Olga Prykhodko</h3>
+        <p>Product UI for web and mobile, design systems and brand identity. Editorial art direction for a German automotive magazine.</p>
+      </div>
+      <div class="person">
+        <p class="role">Co-founder, delivery</p>
+        <h3>Ivan Todoruk</h3>
+        <p>Scope, planning, communication and delivery. Your single point of contact.</p>
+      </div>
+    </div>
+    <p class="team-note">For larger scopes we can add designers from our partner studio TheRoom, only with your written approval.</p>
+  </div>
+</section>
+
+<section class="start">
+  <div class="wrap">
+    <h2>Start with a small paid task.</h2>
+    <p class="lede">One task or a few days inside your file. You see how we work before you commit to more.</p>
+    <dl>
+      <div><dt>Engagement</dt><dd>Day rate or fixed price per scope</dd></div>
+      <div><dt>Start</dt><dd>Within [X] days of a signed NDA</dd></div>
+      <div><dt>Contact</dt><dd>Ivan Todoruk<br><a href="mailto:loomvale@proton.me">loomvale@proton.me</a></dd></div>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Axiom and Wallet App were delivered together with our partner studio TheRoom and are shown with permission. © 2026 Loomvale.</p>
+  </div>
+</footer>
+
+</body>
+</html>
