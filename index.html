@@ -19,11 +19,10 @@
     --ink-soft: #48514C;
     --ink-muted: #66706B;
     --rule: #C9D3CE;
-    --green: #0000;
-    --night: #0000;
+    --green: #1F6B46;
     --night-text: #b6b6b6;
     --night-soft: #B9C5BF;
-    --night-green: #0000;
+    --night-green: #7CCB9F;
     --display: 'Science Gothic', 'Arial Narrow', Arial, sans-serif;
     --body: 'Geist', 'Helvetica Neue', Arial, sans-serif;
   }
@@ -75,7 +74,7 @@
   .work { display: grid; gap: clamp(72px, 9vw, 112px); }
   .case { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: start; }
   .case .text { display: flex; flex-direction: column; gap: 18px; position: sticky; top: 24px; }
-  .case .kind { font-size: 15px; color: var(--green); font-weight: 500; }
+  .case .text > p.kind { font-size: 15px; color: var(--green); font-weight: 500; }
   .case h3.title { font: italic 300 clamp(30px, 3.4vw, 40px)/1.1 var(--display); }
   .case .text > p { color: var(--ink-soft); max-width: 44ch; }
   .case ul { list-style: none; margin: 4px 0 0; padding: 0; border-bottom: 1px solid var(--rule); }
@@ -105,6 +104,8 @@
 
   footer { background: #000; color: #8F9A94; font-size: 14px; padding-block: 0 48px; }
   footer p { border-top: 1px solid #3A443F; padding-top: 24px; max-width: 80ch; }
+  footer p.imprint { border-top: 0; padding-top: 12px; }
+  footer p.imprint strong { color: #B9C5BF; font-weight: 500; }
 
   @media (max-width: 860px) {
     .terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -148,7 +149,7 @@
       <div><dt>NDA before files</dt><dd>We sign your NDA, and your client's, before we see anything.</dd></div>
       <div><dt>Your Figma, your system</dt><dd>Your components, tokens and naming. We extend the library and never fork it.</dd></div>
       <div><dt>Your process</dt><dd>Your dailies, reviews and tickets, in the tools your team already uses.</dd></div>
-      <div><dt>Named people only</dt><dd>Only the people named on this page open your files, unless you approve more.</dd></div>
+      <div><dt>Named people only</dt><dd>Everyone who opens your files is named to you in writing before they start.</dd></div>
       <div><dt>Same time zone</dt><dd>Based in Vienna and Bratislava. On site in Vienna when you need us.</dd></div>
     </dl>
   </div>
@@ -280,10 +281,11 @@
         <p>Product UI for web and mobile, design systems and brand identity. Editorial art direction for a German automotive magazine.</p>
       </div>
       <div class="person">
-        <p class="role">Co-founder, delivery</p>
+        <p class="role">Co-founder, runs the studio</p>
         <h3>Ivan Todoruk</h3>
-        <p>Scope, planning, communication and delivery. Your single point of contact.</p>
+        <p>Your contract, NDA and invoices sit with him, and so do scope, budget and capacity. When a deadline moves, he is the one who answers for it.</p>
       </div>
+    </div>
   </div>
 </section>
 
@@ -292,7 +294,7 @@
     <h2>Start with a small paid task.</h2>
     <p class="lede">One task or a few days inside your file. You see how we work before you commit to more.</p>
     <dl>
-      <div><dt>Engagement</dt><dd>Day rate or fixed price per scope</dd></div>
+      <div><dt>Engagement</dt><dd>Day rate or fixed price per scope, invoiced by a registered business in Austria</dd></div>
       <div><dt>Start</dt><dd>Right after a signed NDA</dd></div>
       <div><dt>Contact</dt><dd>Ivan Todoruk<br><a href="mailto:loomvale@proton.me">loomvale@proton.me</a></dd></div>
     </dl>
@@ -303,6 +305,7 @@
 <footer>
   <div class="wrap">
     <p>Axiom and Wallet App were delivered together with our partner studio TheRoom and are shown with permission. © 2026 Loomvale.</p>
+    <p class="imprint"><strong>Impressum.</strong> Ivan Todoruk, trading as Loomvale · [TODO: business address, Vienna] · [TODO: Gewerbe as registered in GISA] · Member of the Austrian Economic Chamber (WKO) · Trade authority: [TODO: Magistratisches Bezirksamt] · Trade regulations: Gewerbeordnung, ris.bka.gv.at · UID: [TODO: ATU…] · loomvale@proton.me</p>
   </div>
 </footer>
 
